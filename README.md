@@ -10,3 +10,5 @@ When prompted, the user should enter either 'count' or 'value' for the first que
 'value' will run through the Fibonacci sequence and print values until it hits one that it equal or greater than the supplied value.
 
 I've added some safety to the program, namely that it will spit out an error on misspelled answers to the first question. It will also convert anything to lowercase as a precaution.
+
+A live demonstration can be found at: http://repl.it/I75
