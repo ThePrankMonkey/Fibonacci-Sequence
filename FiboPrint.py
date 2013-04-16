@@ -1,5 +1,12 @@
-def FiboPrint(method, maxCount):
+def FiboPrint(indent=0):
 #     dataout = open('dataout.txt', 'w')
+
+    method = raw_input('What method should we choose: \'count\' or \'value\'? ')
+    maxCount = int(raw_input('What value do you want to enter? Please enter an integer. '))
+    
+    if maxCount < 0:
+        print 'Try entering a positive integer next time.'
+        return
 
     count = 0
     val1 = 0
@@ -10,6 +17,8 @@ def FiboPrint(method, maxCount):
         print 'The first ' + str(maxCount) + ' numbers in the Fibonacci Sequence:'
         while count < maxCount:
 #             dataout.write(str(val1) + '\r')
+            for i in range(indent):
+                print ' ',
             print val1
             val1, val2 = val1 + val2, val1
             count += 1
@@ -19,11 +28,12 @@ def FiboPrint(method, maxCount):
         print 'The numbers in the Fibonacci Sequence less than or equal to ' + str(maxCount)
         while val1 <= maxCount:
 #             dataout.write(str(val1) + '\r')
-            print val1
+            for i in range(indent):
+                print '',
+            print '', val1
             val1, val2 = val1 + val2, val1
     else:
         print 'It seems you entered something wrong, try again and check your spelling.'
 
 # Choose 'count' or 'value' for the second argument and it will act differently. 
-FiboPrint(raw_input('What method should we choose: \'count\' or \'value\'? '), 
-          int(raw_input('What value do you want to enter? Please enter an integer. ')))
+FiboPrint()
